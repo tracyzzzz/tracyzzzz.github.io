@@ -1,0 +1,214 @@
+  body {
+    margin: 0; 
+    padding: 0;
+    background-color: #0E0C0C;
+    text-align: center;
+    min-width: 960px; 
+  }
+
+  nav {
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 960px; 
+    position:fixed;
+    top:0;
+    z-index: 5;
+    height: 80px; /* Add explicit height for the nav */
+    background-color: #0E0C0C; /* Add background to prevent content showing through */
+  }
+
+  nav .title {
+      color: #EFECE2;
+      font-size: 25px;
+      margin-left: 70px;
+      font-weight: 300;
+      display: flex;
+      align-items: left;
+    }
+
+  nav .title a {
+      text-decoration: None;
+      color:#EFECE2;
+    }
+    
+  nav ul {
+      list-style-type: none;
+      margin-right: 100px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+    
+  nav li {
+      margin-right: 0px;
+      padding: 0px 0px;
+      vertical-align: middle;
+    }
+
+  nav li a {
+      display:block;
+      color: #EFECE2;
+      text-align: center;
+      padding: 33px 16px;
+      font-size: 14px;
+      text-decoration: none;
+      font-weight: 300;
+      transition: color 0.3s ease;
+    }
+    
+  nav li a:hover {
+      color: #C6BB97;
+      margin:0;
+      padding:auto;
+    }
+
+  nav li .selected,
+  nav li .selected:hover {
+    color: #C6BB97;
+  }
+
+  svg { width: 24px; height: 24px; color: #EFECE2; transition: color 0.3s ease;} 
+
+svg:hover { width: 24px; height: 24px; color: #C6BB97; } 
+
+
+
+.social-icons {
+  margin-left: 0px; /* Reduce this value to bring them closer */
+  margin-right: -30px; /* Add this to control spacing */
+}
+
+/* draw as white strokes on black fill */
+.social-icons .stencil {
+    fill:#000;                 /* inside is black to blend with dark bg */
+    stroke:currentColor;       /* line color = white from svg { color } */
+    stroke-width:26;           /* adjust thickness to taste */
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    shape-rendering:geometricPrecision;
+}
+.social-icons .dot {
+    fill:currentColor;         
+    stroke:none;
+}
+  
+  #videopage {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 80px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #0E0C0C;
+    text-align: center;
+    align-items: center;
+  }
+
+  .video-row {
+  position: relative;
+  display: flex;
+  height: 370px;
+  width: 960px; /* Fixed width - adjust this value as needed */
+  overflow: hidden;
+  background-color: var(--bg-color);
+  color: white;
+  align-items: center;
+}
+
+.video-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.video-row:nth-child(odd) {
+  flex-direction: row;
+}
+
+.video-thumb {
+  flex: 2.5;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Add this spacer to maintain layout proportions */
+.video-spacer {
+  flex: 1;
+  height: 100%;
+}
+
+.video-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none; /* Allow clicks to pass through to play button */
+}
+
+/* Right-align text for odd rows */
+.video-row:nth-child(odd) .video-text {
+  text-align: right;
+  align-items: flex-end;
+}
+
+/* Left-align text for even rows */
+.video-row:nth-child(even) .video-text {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.video-text h2{
+  margin: 0;
+  font-family: 'Bodoni 72','Didot','Times New Roman', serif;
+}
+
+  .video-text h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 30px;
+    margin-left: 30px;
+    line-height: 1.35;
+    /* margin-bottom: 12px; */
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .video-row:hover .overlay {
+    opacity: 0.2;
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: white;
+    text-decoration: none;
+    z-index: 3;
+    transition: transform 0.3s ease;
+  }
+
+  .play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }

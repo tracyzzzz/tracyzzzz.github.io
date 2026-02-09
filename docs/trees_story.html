@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rooting for Equality — Tackling San Francisco's Tree Divide</title>
+    <meta name="description" content="A scrollytelling article with a hero video and embedded interactive graphics." />
+    <link href="./css/trees_page.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <!-- TOP VIDEO -->
+    <header class="hero" id="hero">
+        <div class="heroVideo">
+            <video class="video" autoplay muted loop playsinline>
+            <source src="./src/trees_1080_crisp.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="heroText">
+            <div class="kicker">Tackling San Francisco's Tree Divide</div>
+            <h1>Rooting for Equality</h1>
+            <div class="byline">By Tracy Zhang</div>
+        </div>
+    </header>
+
+    <!-- MAIN STORY -->
+    <main class="story">
+      <article class="article">
+        <p class="lead">
+            On a chilly drizzly morning on March 11, 2023, 160 volunteers gathered in the South of Market neighborhood of San Francisco, attending the Arbor Day event organized by San Francisco Public Works. The volunteers from all age groups picked up shovels, dug holes, and planted Raywood ash, London plane, and Olea 'Majestic Beauty' olive trees, giving 115 trees a new home in a neighborhood with one of the city's smallest tree canopies.        
+        </p>
+        <p>
+            “Arbor Day is when we celebrate trees in San Francisco,” said Carla Short, the Interim Director of San Francisco Public Works. During the event, Short mingled with the crowd as she took pictures with the diverse participants while dressed in a tree costume that resembles a pine tree. 
+        </p>
+        <p>
+            But with a tree canopy cover of a mere 4.1%, the South of Market neighborhood exemplifies the unequal distribution of trees throughout the city. Communities facing larger housing burdens, higher populations of people of color, and lower socioeconomic status often have fewer street trees. 
+        </p>
+        <p>
+            For example, in census tracts where the median household income exceeds $200K, the average tree canopy coverage is 14.5%. In contrast, neighborhoods with households earning less than $100K annually have a tree canopy coverage of only 7.2%, which is nearly half the coverage of wealthier areas.
+        </p>
+        <p>
+            In neighborhoods where over 70% of residents are people of color, there are on average fewer than three street trees per acre. By contrast, in less diverse neighborhoods where the population is less than 30% people of color, there are an average of six street trees per acre, double the number in areas where non-white communities reside.
+        </p>
+
+    
+        <section class="embedBlock">
+        <div class="flourish-embed flourish-map" data-src="visualisation/13115240">
+            <noscript>
+            <img
+                src="https://public.flourish.studio/visualisation/13115240/thumbnail"
+                width="100%"
+                alt="map visualization"
+            />
+            </noscript>
+            <script async src="https://public.flourish.studio/resources/embed.js"></script>
+        </div>
+        </section>
+
+        <section class="embedBlock" id="vegaChart">
+          <h3 class="embedTitle">Median Household Income vs. Street Tree Density, by Neighborhood</h3>
+          <div id="incomeTrees"></div>
+          <div class="sourceNote">Source: USDA Forest Service · American Community Survey · Bureau of Urban Forestry</div>
+
+          <!-- Vega stack -->
+          <script defer src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+          <script defer src="./embeds.js"></script>
+        </section>
+
+
+         <!-- Continue story -->
+        <p>
+          “This has been known for decades in San Francisco,” said Chris Buck, an urban forester at the Bureau of Urban Forestry of San Francisco Public Works, “And despite that, it has still been difficult to secure enough funding for tree planting.”
+        </p>
+
+        <p>
+          San Francisco aims to increase its street tree population from 125,000 to 155,000 trees by 2040, a goal set in the 2021 Climate Action Plan. To achieve this, the city must plant 4,700 trees annually. Unfortunately, the current planting effort only manages to plant 2,000 trees each year due to limited funding. At this rate, not only will the city fail to meet its goal, but it will also see a decrease of over 10,000 trees by 2040.
+        </p>
+
+        <section class="img" id="treesGoal">
+          <img src="./src/trees_goal.png" alt="Street Tree Population vs 2040 CAP Goal By Year">
+          <div class="caption">The year-over-year increase in tree population needed to reach the Climate Action Plan goal of growing the street tree population by 25% by 2040 in relation to actual annual changes in street tree population. This puts the City about 7,800 trees behind schedule.</div>
+          <div class="sourceNote">Source: 2022 Urban Forestry Report / San Francisco Urban Forestry Council</div>
+        </section>
+
+        <!-- Continue story -->
+        <p>
+          On February 17, the Urban Forestry Council Chair, Andrew Sullivan, wrote a letter to Mayor London Breed and the Board of Supervisors calling for a minimum of $14.1 million per year to meet the tree planting goals of 4,700 trees during the upcoming budgeting cycle.
+        </p>
+
+        <p>
+          “It's expensive to plant trees in San Francisco, and the main reason for that is because we have to water them for at least three years to get them established,” Short said. Unlike other cities that benefit from seasonal rain, San Francisco must send water trucks to water the trees due to droughts in recent years. “We don't want to plant a tree and then let it die.”        
+        </p>
+
+        <p>
+          Once established, trees help reduce stormwater runoff, clean the air, and provide a habitat for birds and butterflies. “Street trees make sidewalks more walkable and neighborhoods more livable,” Short said, “They also slow traffic and help manage stormwater.”
+        </p>
+
+        <p>
+          In his letter, Sullivan also highlighted the positive impacts on human health, reduced crime rates, improved pedestrian safety, and mitigation of extreme heat and air quality hazards associated with climate change.         
+        </p>
+        <section class="photoGallery">
+          <div class="carousel-container">
+            <div class="carousel">
+              <div class="carousel-slide active">
+                <img src="./src/gallery1.webp" alt="SF Arbor Day tree planting event">
+              </div>
+              <div class="carousel-slide">
+                <img src="./src/gallery2.webp" alt="SF Arbor Day tree planting event">
+              </div>
+              <div class="carousel-slide">
+                <img src="./src/gallery3.webp" alt="SF Arbor Day tree planting event">
+              </div>
+              <div class="carousel-slide">
+                <img src="./src/gallery4.webp" alt="SF Arbor Day tree planting event">
+              </div>
+              <div class="carousel-slide">
+                <img src="./src/gallery5.webp" alt="SF Arbor Day tree planting event">
+              </div>
+              <div class="carousel-slide">
+                <img src="./src/gallery6.webp" alt="SF Arbor Day tree planting event">
+              </div>
+              <div class="carousel-slide">
+                <img src="./src/gallery7.webp" alt="SF Arbor Day tree planting event">
+              </div>
+              <div class="carousel-slide">
+                <img src="./src/gallery8.webp" alt="SF Arbor Day tree planting event">
+              </div>
+            </div>
+            
+            <!-- Navigation arrows -->
+            <button class="carousel-btn prev" aria-label="Previous photo">&lt;</button>
+            <button class="carousel-btn next" aria-label="Next photo">&gt;</button>
+            
+            <!-- Dots indicator -->
+            <div class="carousel-dots">
+              <button class="dot active" data-slide="0"></button>
+              <button class="dot" data-slide="1"></button>
+              <button class="dot" data-slide="2"></button>
+              <button class="dot" data-slide="3"></button>
+              <button class="dot" data-slide="4"></button>
+              <button class="dot" data-slide="5"></button>
+              <button class="dot" data-slide="6"></button>
+              <button class="dot" data-slide="7"></button>
+            </div>
+          </div>
+          <div class="caption">SF Arbor Day 2023 - Photos by Tracy Zhang</div>
+        </section>
+
+        <!-- Continue story -->
+        <p>
+          Historically, the city planted trees only on certain major streets, maintaining just a third of the street trees. And since 2014, budget cuts made it impossible for San Francisco Public Works to maintain even those trees.         
+        </p>
+
+        <p>
+          “We were retreating and relinquishing trees,” Buck said, explaining that the city was in a process of transferring the responsibility for tree maintenance to property owners, who took care of the trees. “The one-third that we historically maintained, we couldn't even maintain those. We were going in reverse.” 
+        </p>
+
+        <p>
+          Things began to change in 2017 with Proposition E, the charter amendment that shifted tree and sidewalk maintenance responsibility back to the city and allocated $19 million per year from the general fund to cover the costs. This funded the StreetTreeSF initiative, a citywide tree maintenance program managed by San Francisco Public Works, to proactively maintain over 124,000 street trees and sidewalks on a regular basis.
+        </p>
+
+        <p>
+          The challenge now is planting new trees.
+        </p>
+
+        <p>
+          “We're having more heat events in San Francisco, and we never used to have to worry about that kind of heat,” Short said. “We need to focus on the gaps in the canopy and try to increase that equity so that we can help mitigate the extreme heat events.”
+        </p>
+
+        <p> 
+          Short called Proposition E “a huge achievement” that set aside funding for taking care of trees once they’re established. But the money to plant new trees is still up in the air.
+        </p>
+
+        <p>
+          “We have to hustle every year to try to get funding for tree planting,” Short said.
+        </p>
+
+        <section class="embedBlock" id="slider">
+          <div class="flourish-embed flourish-photo-slider" data-src="visualisation/12954984">
+            <noscript><img src="https://public.flourish.studio/visualisation/12954984/thumbnail" width="100%" alt="photo-slider visualization" />
+            </noscript>
+          </div>
+          <div class="caption">
+            Notice that a darker shade of blue generally correlates with a lighter shade of green — The Bureau of Urban Forestry is working toward planting more street trees in the communities that are most in need.
+          </div>
+          <div class="sourceNote">Source: SF Bureau of Urban Forestry · OpenStreetMap</div>
+        </section>
+
+        <!-- Continue story -->
+        <p>
+          To secure funding, San Francisco Public Works applies for grants, participates in the city's capital program, and also collaborates with nonprofits like Friends of the Urban Forest, Short said.
+        </p>
+
+        <p>
+          “We're doing most of the planting,” said Annika Peterson, Friends of Urban Forest's tree care manager who works on caring for trees during their establishment period. “It's harder for Public Works to secure the resources and the funding to do as much planting, so that's what we're here for — to try and, and help people out and to get more trees in.”
+        </p>
+
+        <p>
+          Established in 1981, Friends of the Urban Forest helps individuals and neighborhood groups plant and care for street trees, as well as sidewalk gardens in San Francisco. With funding from programs such as the Cal Fire Urban and Community Forestry grant, the organization focuses on projects in communities with the greatest need, such as Excelsior, Bayview, and Ingleside.
+        </p>
+
+        <p>
+          While funding remains a challenge, Short feels strongly that the city has a good plan. “In the past, we used to not plant unless we know we can take care of it, but now we have the funding locked down to take care of the trees...We're in really good shape to be able to get the money to plant and make a good piece of it.” 
+        </p>
+
+        <div class="story-end">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Tree trunk -->
+            <rect x="45" y="70" width="10" height="20" fill="#8B4513"/>
+            <!-- Tree foliage -->
+            <circle cx="50" cy="45" r="25" fill="#228B22"/>
+            <circle cx="40" cy="50" r="18" fill="#32CD32"/>
+            <circle cx="60" cy="50" r="18" fill="#32CD32"/>
+            <circle cx="50" cy="35" r="15" fill="#90EE90"/>
+          </svg>
+        </div>
+      </article>
+    </main>
+
+
+    <script>
+        window.addEventListener('scroll', () => {
+        const heroHeight = window.innerHeight * 2; // Hero is 200vh
+        const textScrollEnd = window.innerHeight; // Text scrolls out at 100vh
+        const scrollY = window.scrollY;
+        
+        const heroText = document.querySelector('.heroText');
+        
+        // Animate text opacity and position as user scrolls
+        if (scrollY <= textScrollEnd) {
+            const progress = scrollY / textScrollEnd;
+            const opacity = Math.max(0, 1 - (progress * 1.5)); // Fade faster
+            const translateY = -scrollY * 0.3; // Text moves up slower than scroll
+            
+            heroText.style.opacity = opacity;
+            heroText.style.transform = `translate(-50%, calc(-50% + ${translateY}px))`;
+        } else {
+            // Keep text hidden after scroll point
+            heroText.style.opacity = '0';
+        }
+        });
+    </script>
+
+  
+    <script>  
+      document.addEventListener('DOMContentLoaded', function() {
+          const slides = document.querySelectorAll('.carousel-slide');
+          const dots = document.querySelectorAll('.dot');
+          const prevBtn = document.querySelector('.carousel-btn.prev');
+          const nextBtn = document.querySelector('.carousel-btn.next');
+          
+          let currentSlide = 0;
+          
+          function showSlide(index) {
+              // Hide all slides
+              slides.forEach(slide => slide.classList.remove('active'));
+              dots.forEach(dot => dot.classList.remove('active'));
+              
+              // Show current slide
+              slides[index].classList.add('active');
+              dots[index].classList.add('active');
+          }
+          
+          function nextSlide() {
+              currentSlide = (currentSlide + 1) % slides.length;
+              showSlide(currentSlide);
+          }
+          
+          function prevSlide() {
+              currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+              showSlide(currentSlide);
+          }
+          
+          // Event listeners
+          nextBtn.addEventListener('click', nextSlide);
+          prevBtn.addEventListener('click', prevSlide);
+          
+          // Dot navigation
+          dots.forEach((dot, index) => {
+              dot.addEventListener('click', () => {
+                  currentSlide = index;
+                  showSlide(currentSlide);
+              });
+          });
+          
+          // Keyboard navigation
+          document.addEventListener('keydown', (e) => {
+              if (e.key === 'ArrowLeft') prevSlide();
+              if (e.key === 'ArrowRight') nextSlide();
+          });
+      });
+    </script>
+  </body>
+</html>

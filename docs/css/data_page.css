@@ -1,0 +1,246 @@
+  body {
+    margin: 0; 
+    padding: 0;
+    background-color: #ffffff;
+    text-align: center;
+    min-width: 960px; 
+  }
+
+  nav {
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 960px; 
+    position:fixed;
+    top:0;
+    z-index: 5;
+    height: 80px; /* Add explicit height for the nav */
+    background-color: #ffffff; /* Add background to prevent content showing through */
+  }
+
+  nav .title {
+      color: #424242;
+      font-size: 25px;
+      margin-left: 70px;
+      font-weight: 300;
+      display: flex;
+      align-items: left;
+    }
+
+  nav .title a {
+      text-decoration: None;
+      color:#424242;
+    }
+    
+  nav ul {
+      list-style-type: none;
+      margin-right: 100px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+    
+  nav li {
+      margin-right: 0px;
+      padding: 0px 0px;
+      vertical-align: middle;
+    }
+
+  nav li a {
+      display:block;
+      color: #424242;
+      text-align: center;
+      padding: 33px 16px;
+      font-size: 14px;
+      text-decoration: none;
+      font-weight: 300;
+      transition: color 0.3s ease;
+    }
+    
+  nav li a:hover {
+      color: #C6BB97;
+      margin:0;
+      padding:auto;
+    }
+
+  nav li .selected,
+  nav li .selected:hover {
+    color: #C6BB97;
+  }
+
+  svg { width: 24px; height: 24px; color: #424242; transition: color 0.3s ease;} 
+
+  svg:hover { width: 24px; height: 24px; color: #C6BB97; } 
+
+
+
+.social-icons {
+  margin-left: 0px; /* Reduce this value to bring them closer */
+  margin-right: -30px; /* Add this to control spacing */
+}
+
+/* draw as white strokes on black fill */
+.social-icons .stencil {
+    fill:#ffffff;                 /* inside is black to blend with dark bg */
+    stroke:currentColor;       /* line color = white from svg { color } */
+    stroke-width:26;           /* adjust thickness to taste */
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    shape-rendering:geometricPrecision;
+}
+.social-icons .dot {
+    fill:currentColor;         
+    stroke:none;
+}
+  
+  #data-page {
+    display: flex;
+    height: 100vh;
+    text-align: center;
+    position:relative;    
+    font-family: 'Avenir',sans-serif;
+    min-width: 1450px; 
+  }
+
+
+  #data-page #title {
+    flex: 1; /* 50% of the page */
+    padding: 2rem; 
+    display: flex;
+    flex-direction: column;
+    color: #424242;
+    margin-top: 6%;
+    font-size: 20px;
+    position: fixed;
+    top: 50px;
+    width: 50%;
+  }
+
+  #data-page #title h1 {
+    font-family: "Bodoni Moda", serif;
+    font-size: 50px;
+    margin-left: 20%;
+    margin-top: 10%;
+    text-align: left;
+  }
+
+  #data-page #title p {
+    font-family: 'Avenir Light', sans-serif;
+    font-size: 16px;
+    margin-left: 20%;
+    text-align: left;
+    font-weight: 300;
+    line-height: 2;
+  }
+
+  #data-page #projects {
+    flex: 1; /* 50% of the page */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 25%;
+    margin-top: 80px;
+    padding: 2rem 0;
+  }
+
+  .project {
+    margin-bottom: 3rem;
+    text-align: left;
+    max-width: 50%;
+    position: relative;
+  }
+
+  .project:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem; /* Half of margin-bottom to center the line */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%; 
+  height: 1px;
+  background-color: #BEBEBE;
+}
+
+  .project h2 {
+    font-size: 24px;
+    color: #424242;
+    margin-bottom: 1rem;
+    font-family: 'Avenir', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .project p {
+    font-size: 15px;
+    color: #333;
+    font-family: 'Avenir Light', sans-serif;
+    margin-bottom: 1rem;
+    margin-top: -5px;
+    line-height: 1.5;
+  }
+
+  .buttons {
+    display: flex;
+    margin-bottom: 2rem;
+    gap:5px;
+    width: 100%; 
+  } 
+
+  .buttons a {
+    flex: 1;
+    text-decoration: none;
+  }
+
+
+  .buttons button {
+    width: 100%;
+    flex: 1; 
+    padding: 10px 10px;
+    background-color: transparent;
+    color: #BEBEBE;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1.3px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .buttons button svg {
+    stroke: #BEBEBE; 
+    transition: stroke 0.3s ease; 
+}
+
+  .buttons button:hover {
+    background-color: #C6BB97;
+    color: #ffffff;
+  }
+
+  .buttons button:hover svg {
+  stroke: #ffffff; 
+}
+
+  .project img{
+    max-width: 100%; /* Ensures the image scales within its container */
+    height: auto; 
+    object-fit: cover; /* Keeps the aspect ratio intact */
+    margin-bottom: 0; 
+    display: block;
+  }
+
+  .project img:last-of-type {
+    margin-bottom: 2rem;
+    display: block;
+}
+

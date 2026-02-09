@@ -1,0 +1,184 @@
+
+
+body {
+    margin: 0; 
+    padding: 0;
+    background-color: #0E0C0C;
+    text-align: center;
+    overflow: hidden;
+  }
+
+nav {
+    /* box-shadow: 0px 2px 10px #F5F1E0;  */
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 1450px; 
+    position:fixed;
+    top:0;
+    z-index: 5;
+    height: 80px; /* Add explicit height for the nav */
+  }
+
+nav .title {
+    color: #EFECE2;
+    font-size: 25px;
+    margin-left: 70px;
+    font-weight: 300;
+    display: flex;
+    align-items: left;
+  }
+
+nav .title a {
+    text-decoration: None;
+    color:#EFECE2;
+  }
+  
+nav ul {
+    list-style-type: none;
+    margin-right: 100px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+nav li {
+    margin-right: 0px;
+    padding: 0px 0px;
+    vertical-align: middle;
+  }
+
+nav li a {
+    display:block;
+    color: #EFECE2;
+    text-align: center;
+    padding: 33px 16px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s ease;
+  }
+  
+nav li a:hover {
+    color: #C6BB97;
+    margin:0;
+    padding:auto;
+  }
+
+nav li .selected,
+nav li .selected:hover {
+  color: #C6BB97;
+}
+
+svg { width: 24px; height: 24px; color: #EFECE2; transition: color 0.3s ease;} 
+
+svg:hover { width: 24px; height: 24px; color: #C6BB97; } 
+
+
+
+.social-icons {
+  margin-left: 0px; /* Reduce this value to bring them closer */
+  margin-right: -30px; /* Add this to control spacing */
+}
+
+/* draw as white strokes on black fill */
+.social-icons .stencil {
+    fill:#000;                 /* inside is black to blend with dark bg */
+    stroke:currentColor;       /* line color = white from svg { color } */
+    stroke-width:26;           /* adjust thickness to taste */
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    shape-rendering:geometricPrecision;
+}
+.social-icons .dot {
+    fill:currentColor;         
+    stroke:none;
+}
+
+
+
+#landing-page {
+    display: flex;
+    height: 100vh;
+    text-align: center;
+    position:relative;    
+    font-family: 'Avenir',sans-serif;
+    min-width: 1450px; 
+  }
+
+  #landing-page #image {
+    flex: 1; /* 50% of the page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  #landing-page #image img{
+    max-width: 100%; /* Ensures the image scales within its container */
+    max-height: 100%; /* Ensures the image doesn't overflow */
+    object-fit: cover; /* Keeps the aspect ratio intact */
+    z-index: -1;
+    transform: scale(1.4) translateY(1%)
+
+  }
+
+  #landing-page #text {
+    flex: 1; /* 50% of the page */
+    padding: 2rem; /* Add spacing inside the text section */
+    display: flex;
+    flex-direction: column;
+    color: #EFECE2;
+    margin-top: 6%;
+  }
+
+  
+  #landing-page #text #text-content {
+    width: 46%;
+    margin-left:22%;
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* center contents like h1 and p */ 
+    text-align: left;
+  }
+
+  #landing-page #text #titles h1{
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 2px;
+  }
+
+
+  #landing-page #text #titles p{
+    font-family: "Bodoni Moda", serif;
+    font-size: 18px;
+    font-weight: 200;
+    margin-top: 5px;
+    margin-bottom: 1rem;
+  }
+
+  #landing-page #text #paragraph{
+    font-family: 'Avenir-Light',sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+    color: rgba(239, 236, 226, 0.9)
+  }
+
+  #landing-page #text #paragraph b{
+    font-family: 'Avenir-Medium',sans-serif;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+    color: rgba(239, 236, 226, 1)
+  }
+
+
+
+    
+

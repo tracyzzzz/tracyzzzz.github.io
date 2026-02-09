@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 350,
+  "data": { "url": "./data/income-vs-trees.json" },
+  "layer": [
+    {
+      "mark": { "type": "square", "size": 80 },
+      "encoding": {
+        "x": {
+          "field": "weighted_median_income",
+          "title": "Median Household Income",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "trees_per_acre",
+          "title": "Number of Street Trees Per Acre",
+          "type": "quantitative"
+        },
+        "color": { "field": "neighborhood", "legend": null, "type": "nominal" },
+        "size": { 
+          "field": "population", 
+          "title": "Population", 
+          "type": "quantitative",
+          "legend": {
+            "values": [50000, 100000, 150000],
+            "labelExpr": "datum.value / 1000 + 'k'"
+          }
+        },
+        "tooltip": [
+          { "field": "neighborhood", "title": "Neighborhood" },
+          { "field": "population", "title": "Population", "type": "quantitative" },
+          { "field": "income_tag", "title": "Median Income" }
+        ]
+      },
+      "selection": {
+        "zoom": {
+          "type": "interval",
+          "bind": "scales",
+          "encodings": ["x", "y"]
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "transform": [{ "regression": "trees_per_acre", "on": "weighted_median_income" }],
+      "encoding": {
+        "x": { 
+          "field": "weighted_median_income", 
+          "type": "quantitative",
+          "axis": {
+            "labelExpr": "datum.value / 1000 + 'k'"
+          }
+        },
+        "y": { "field": "trees_per_acre", "type": "quantitative" }
+      }
+    }
+  ]
+}
