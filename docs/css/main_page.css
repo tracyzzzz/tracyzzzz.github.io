@@ -140,7 +140,7 @@ svg:hover { width: 24px; height: 24px; color: #C6BB97; }
 
   
   #landing-page #text #text-content {
-    width: 46%;
+    width: 50%;
     margin-left:22%;
     display: flex;
     flex-direction: column;
