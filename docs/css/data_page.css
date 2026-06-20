@@ -61,12 +61,11 @@
       text-decoration: none;
       font-weight: 300;
       transition: color 0.3s ease;
+      position: relative;
     }
     
   nav li a:hover {
       color: #C6BB97;
-      margin:0;
-      padding:auto;
     }
 
   nav li .selected,
@@ -155,6 +154,14 @@
     text-align: left;
     max-width: 50%;
     position: relative;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .project.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .project:not(:last-child)::after {
@@ -282,15 +289,102 @@
 }
 
   .project img{
-    max-width: 100%; /* Ensures the image scales within its container */
+    max-width: 100%;
     height: auto; 
-    object-fit: cover; /* Keeps the aspect ratio intact */
+    object-fit: cover;
     margin-bottom: 0; 
     display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .project img:hover {
+    transform: scale(1.02);
   }
 
   .project img:last-of-type {
     margin-bottom: 2rem;
     display: block;
+}
+
+/* ── Nav underline slide ─────────────────────────── */
+nav li a::after {
+  content: '';
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  right: 16px;
+  height: 1px;
+  background-color: #C6BB97;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav li a:hover::after,
+nav li .selected::after {
+  transform: scaleX(1);
+}
+
+nav .social-icons a::after {
+  display: none;
+}
+
+/* ── Mobile ──────────────────────────────────────── */
+@media (max-width: 767px) {
+
+  body { min-width: 0; }
+
+  /* Collapse fixed two-column layout */
+  #data-page {
+    flex-direction: column;
+    height: auto;
+    min-width: 0;
+    min-height: 100vh;
+  }
+
+  /* Hide the fixed left title panel */
+  #data-page #title {
+    display: none;
+  }
+
+  /* Projects: full width, single column */
+  #data-page #projects {
+    margin-left: 0;
+    margin-top: 0;
+    padding: 80px 1.5rem 6rem;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: flex-start;
+  }
+
+  .project {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Mobile social bar */
+  .mobile-social-bar {
+    background-color: #ffffff;
+  }
+  .mobile-social-bar svg { color: #424242; }
+  .mobile-social-bar .stencil {
+    fill: #ffffff;
+    stroke: currentColor;
+    stroke-width: 26;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    shape-rendering: geometricPrecision;
+  }
+  .mobile-social-bar .dot { fill: currentColor; stroke: none; }
+  .hamburger { color: #424242; }
+}
+
+/* ── Accessibility ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .project {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 

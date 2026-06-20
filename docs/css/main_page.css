@@ -63,12 +63,11 @@ nav li a {
     text-decoration: none;
     font-weight: 300;
     transition: color 0.3s ease;
+    position: relative;
   }
   
 nav li a:hover {
     color: #C6BB97;
-    margin:0;
-    padding:auto;
   }
 
 nav li .selected,
@@ -113,20 +112,18 @@ svg:hover { width: 24px; height: 24px; color: #C6BB97; }
   }
 
   #landing-page #image {
-    flex: 1; /* 50% of the page */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
 
   #landing-page #image img{
-    max-width: 100%; /* Ensures the image scales within its container */
-    max-height: 100%; /* Ensures the image doesn't overflow */
-    object-fit: cover; /* Keeps the aspect ratio intact */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
     z-index: -1;
-    transform: scale(1.4) translateY(1%)
-
+    animation: kenBurns 20s ease-in-out infinite, fadeIn 1.2s ease 0.1s both;
   }
 
   #landing-page #text {
@@ -135,7 +132,7 @@ svg:hover { width: 24px; height: 24px; color: #C6BB97; }
     display: flex;
     flex-direction: column;
     color: #EFECE2;
-    margin-top: 5%;
+    margin-top: 10%;
   }
 
   
@@ -179,6 +176,158 @@ svg:hover { width: 24px; height: 24px; color: #C6BB97; }
   }
 
 
+/* ── Entrance animations ─────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-    
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
+@keyframes kenBurns {
+  0%   { transform: scale(1.38) translateY(1.5%); }
+  50%  { transform: scale(1.46) translateY(0.4%); }
+  100% { transform: scale(1.38) translateY(1.5%); }
+}
+
+nav .title {
+  animation: fadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.05s both;
+}
+
+nav ul {
+  animation: fadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s both;
+}
+
+#landing-page #text #titles h1 {
+  animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
+}
+
+#landing-page #text #titles p {
+  animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both;
+}
+
+#landing-page #text #paragraph {
+  animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s both;
+}
+
+/* ── Nav underline slide ─────────────────────────── */
+nav li a::after {
+  content: '';
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  right: 16px;
+  height: 1px;
+  background-color: #C6BB97;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav li a:hover::after,
+nav li .selected::after {
+  transform: scaleX(1);
+}
+
+nav .social-icons a::after {
+  display: none;
+}
+
+/* ── Accessibility ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  nav .title, nav ul,
+  #landing-page #text #titles h1,
+  #landing-page #text #titles p,
+  #landing-page #text #paragraph {
+    animation: none;
+    opacity: 1;
+  }
+  #landing-page #image img {
+    animation: none;
+    transform: scale(1.4) translateY(1%);
+  }
+}
+
+/* ── Mobile (≤ 767px) ────────────────────────────── */
+@media (max-width: 767px) {
+
+  body {
+    overflow-y: auto;
+  }
+
+  /* Stack image above text */
+  #landing-page {
+    flex-direction: column;
+    min-width: 0;
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  #landing-page #image {
+    width: 100%;
+    height: 52vh;
+    flex: none;
+    overflow: hidden;
+  }
+
+  #landing-page #image img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center 15%;
+    /* skip kenBurns on mobile — simpler fade only */
+    animation: fadeIn 1.2s ease 0.1s both;
+  }
+
+  #landing-page #text {
+    flex: none;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0;
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  #landing-page #text #text-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #landing-page #text #titles h1 {
+    font-size: 34px;
+    animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+  }
+
+  #landing-page #text #titles p {
+    font-size: 15px;
+    animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+  }
+
+  #landing-page #text #paragraph {
+    font-size: 13px;
+    line-height: 1.7;
+    animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.7s both;
+  }
+
+  /* Mobile social bar — dark page */
+  .mobile-social-bar {
+    background-color: #0E0C0C;
+  }
+  .mobile-social-bar svg { color: #EFECE2; }
+  .mobile-social-bar .stencil {
+    fill: #0E0C0C;
+    stroke: currentColor;
+    stroke-width: 26;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    shape-rendering: geometricPrecision;
+  }
+  .mobile-social-bar .dot { fill: currentColor; stroke: none; }
+
+  /* Hamburger — dark page */
+  .hamburger { color: #EFECE2; }
+}

@@ -61,12 +61,11 @@
       text-decoration: none;
       font-weight: 300;
       transition: color 0.3s ease;
+      position: relative;
     }
     
   nav li a:hover {
       color: #C6BB97;
-      margin:0;
-      padding:auto;
     }
 
   nav li .selected,
@@ -115,11 +114,19 @@ svg:hover { width: 24px; height: 24px; color: #C6BB97; }
   position: relative;
   display: flex;
   height: 370px;
-  width: 960px; /* Fixed width - adjust this value as needed */
+  width: 960px;
   overflow: hidden;
   background-color: var(--bg-color);
   color: white;
   align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.video-row.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .video-row:nth-child(even) {
@@ -137,6 +144,11 @@ svg:hover { width: 24px; height: 24px; color: #C6BB97; }
   background-position: center;
   position: relative;
   flex-shrink: 0;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.video-row:hover .video-thumb {
+  transform: scale(1.04);
 }
 
 /* Add this spacer to maintain layout proportions */
@@ -191,6 +203,7 @@ svg:hover { width: 24px; height: 24px; color: #C6BB97; }
     background: rgba(0, 0, 0, 0.2);
     z-index: 1;
     transition: opacity 0.3s ease;
+    pointer-events: none;
   }
 
   .video-row:hover .overlay {
@@ -212,3 +225,146 @@ svg:hover { width: 24px; height: 24px; color: #C6BB97; }
   .play-button:hover {
     transform: translate(-50%, -50%) scale(1.1);
   }
+
+/* ── Nav underline slide ─────────────────────────── */
+nav li a::after {
+  content: '';
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  right: 16px;
+  height: 1px;
+  background-color: #C6BB97;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav li a:hover::after,
+nav li .selected::after {
+  transform: scaleX(1);
+}
+
+nav .social-icons a::after {
+  display: none;
+}
+
+/* ── Mobile ──────────────────────────────────────── */
+@media (max-width: 767px) {
+
+  body { min-width: 0; }
+
+  /* Video list: stacked full-width cards */
+  #videopage {
+    padding: 60px 0 80px;
+    gap: 2px;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  /* Each row: full-width card with text on the image */
+  .video-row,
+  .video-row:nth-child(odd),
+  .video-row:nth-child(even) {
+    flex-direction: row;
+    width: 100%;
+    min-width: 0;
+    height: 52vw;
+    background-color: #0E0C0C;
+    transform: none;
+    opacity: 1;
+    transition: none;
+  }
+
+  .video-row.visible {
+    transform: none;
+    opacity: 1;
+  }
+
+  /* Thumbnail: full-width rectangle */
+  .video-thumb {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    transition: none;
+  }
+
+  .video-row:hover .video-thumb {
+    transform: none;
+  }
+
+  /* Spacer hidden so image fills full width */
+  .video-spacer {
+    display: none;
+  }
+
+  /* Thumb fills the full card */
+  .video-thumb {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    transition: none;
+  }
+
+  /* Text stays on the thumbnail — smaller, left first then right */
+  .video-text {
+    position: absolute;
+    padding: 16px;
+  }
+
+  .video-row:nth-child(odd) .video-text {
+    text-align: left;
+    margin-left: 20px;
+    align-items: flex-start;
+  }
+
+  .video-row:nth-child(even) .video-text {
+    text-align: right;
+    margin-right: 20px;
+    align-items: flex-end;
+  }
+
+  .video-text h2 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .overlay {
+    display: block;
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .play-button {
+    font-size: 32px;
+  }
+
+  /* Mobile social bar */
+  .mobile-social-bar {
+    background-color: #0E0C0C;
+  }
+  .mobile-social-bar svg { color: #EFECE2; }
+  .mobile-social-bar .stencil {
+    fill: #0E0C0C;
+    stroke: currentColor;
+    stroke-width: 26;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    shape-rendering: geometricPrecision;
+  }
+  .mobile-social-bar .dot { fill: currentColor; stroke: none; }
+  .hamburger { color: #EFECE2; }
+}
+
+/* ── Accessibility ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .video-row {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .video-thumb {
+    transition: none;
+  }
+}

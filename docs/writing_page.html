@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/writing_page.css" rel="stylesheet" type="text/css">
+    <link href="./css/mobile.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
     <title>Tracy Zhang | Writings and More</title>  
@@ -81,7 +83,20 @@
         </li>
 
       </ul>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+    <div class="slide-panel" id="slidePanel">
+      <ul>
+        <li><a href="video_page.html">Video</a></li>
+        <li><a href="data_page.html">Data Project</a></li>
+        <li><a class="selected" href="writing_page.html">Writing & More</a></li>
+        <li><a href="./src/pdfs/Tracy_Zhang_Resume.pdf" target="_blank">Resume</a></li>
+      </ul>
+    </div>
 
     <div id="title">
         <h1>Writing | Photography | More</h1>
@@ -163,5 +178,47 @@
 
 
     </div>
+
+    <div class="mobile-social-bar">
+      <a href="https://www.instagram.com/kacha_kachaaa/?__d=11" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" aria-label="Instagram">
+          <rect class="stencil" x="75" y="75" width="270" height="270" rx="65.88" ry="65.88"/>
+          <circle class="stencil" cx="208.5" cy="211.5" r="60"/>
+          <circle class="dot" cx="291.5" cy="127.5" r="15"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/tracyzzz/" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" aria-label="LinkedIn">
+          <rect class="stencil" x="75" y="75" width="270" height="270" rx="50" ry="50"/>
+          <circle class="dot" cx="150" cy="150" r="20"/>
+          <rect class="dot" x="135" y="190" width="35" height="90"/>
+          <rect class="dot" x="190" y="190" width="35" height="90"/>
+          <rect class="dot" x="200" y="180" width="85" height="30"/>
+          <rect class="dot" x="250" y="190" width="35" height="90"/>
+        </svg>
+      </a>
+      <a href="https://github.com/tracyzzzz" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" aria-label="GitHub">
+          <rect class="stencil" x="75" y="75" width="270" height="270" rx="65" ry="65"/>
+          <ellipse class="dot" cx="210" cy="200" rx="85" ry="65"/>
+          <polygon class="dot" points="150,162 160,120 200,140"/>
+          <polygon class="dot" points="215,140 255,120 265,162"/>
+          <polygon class="dot" points="170,350 200,160 220,160 250,350"/>
+        </svg>
+      </a>
+    </div>
   </body>
+
+  <script>
+    (function () {
+      var btn     = document.getElementById('hamburgerBtn');
+      var panel   = document.getElementById('slidePanel');
+      var overlay = document.getElementById('navOverlay');
+      function open()  { btn.classList.add('open'); panel.classList.add('open'); overlay.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      function close() { btn.classList.remove('open'); panel.classList.remove('open'); overlay.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+      btn.addEventListener('click', function () { panel.classList.contains('open') ? close() : open(); });
+      overlay.addEventListener('click', close);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    })();
+  </script>
 </html>
