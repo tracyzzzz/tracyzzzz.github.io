@@ -106,9 +106,105 @@ svg:hover { width: 24px; height: 24px; color: #C6BB97; }
     display: flex;
     height: 100vh;
     text-align: center;
-    position:relative;    
+    position: relative;    
     font-family: 'Avenir',sans-serif;
-    min-width: 1450px; 
+    min-width: 1450px;
+  }
+
+  /* Full-page veil — fixed so it covers nav too */
+  .veil {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    background:
+      radial-gradient(
+        ellipse 600px 480px at var(--mx, 50%) var(--my, 50%),
+        rgba(255, 248, 210, 0.09) 0%,
+        rgba(255, 248, 210, 0.03) 50%,
+        transparent 100%
+      ),
+      radial-gradient(
+        ellipse 750px 580px at var(--mx, 50%) var(--my, 50%),
+        transparent 0%,
+        rgba(0, 0, 0, 0.80) 68%
+      );
+  }
+
+  .veil.active {
+    opacity: 1;
+  }
+
+  /* Lamp pull chain */
+  .pull-chain {
+    position: fixed;
+    top: 0;
+    right: 52px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .chain-rope {
+    width: 2px;
+    height: 80px;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(239, 236, 226, 0.45) 0px,
+      rgba(239, 236, 226, 0.45) 5px,
+      transparent 5px,
+      transparent 10px
+    );
+    transition: height 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+  }
+
+  .pull-chain.pulled .chain-rope {
+    height: 100px;
+  }
+
+  .chain-handle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(239, 236, 226, 0.4);
+    border: 1.5px solid rgba(239, 236, 226, 0.65);
+    box-shadow: 0 0 0 0 rgba(239, 236, 226, 0);
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+  }
+
+  .pull-chain:hover .chain-handle {
+    background: rgba(239, 236, 226, 0.65);
+    box-shadow: 0 0 8px 2px rgba(239, 236, 226, 0.2);
+  }
+
+  .pull-chain.pulled .chain-handle {
+    background: rgba(239, 236, 226, 0.8);
+    box-shadow: 0 0 10px 3px rgba(239, 236, 226, 0.25);
+  }
+
+  @keyframes chainPull {
+    0%   { transform: translateY(0); }
+    40%  { transform: translateY(22px); }
+    70%  { transform: translateY(8px); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes chainScroll {
+    from { background-position: 0 0; }
+    to   { background-position: 0 30px; }
+  }
+
+  .pull-chain.pulling .chain-handle {
+    animation: chainPull 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+  }
+
+  .pull-chain.pulling .chain-rope {
+    animation: chainScroll 0.5s ease-in-out;
   }
 
   #landing-page #image {
@@ -257,6 +353,9 @@ nav .social-icons a::after {
   body {
     overflow-y: auto;
   }
+
+  .veil { display: none; }
+  .pull-chain { display: none; }
 
   /* Stack image above text */
   #landing-page {

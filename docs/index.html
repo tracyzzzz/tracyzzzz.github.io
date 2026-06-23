@@ -92,6 +92,7 @@
       </button>
     </nav>
 
+    <div id="veil" class="veil"></div>
     <div class="nav-overlay" id="navOverlay"></div>
     <div class="slide-panel" id="slidePanel">
       <ul>
@@ -121,6 +122,11 @@
           </ul>
       </div>
     </div> -->
+
+    <div class="pull-chain" id="lightsToggle" role="button" aria-label="Toggle lights" aria-pressed="false" tabindex="0">
+      <div class="chain-rope"></div>
+      <div class="chain-handle"></div>
+    </div>
 
     <section id="landing-page">
       <div id="image">
@@ -201,6 +207,46 @@
   <footer> 
     <p> © Copyright 2026 Tracy Zhang. All Rights Reserved. </p>
   </footer>
+
+  <script>
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var root = document.documentElement;
+      var targetX = 50, targetY = 50, curX = 50, curY = 50;
+      document.addEventListener('mousemove', function (e) {
+        targetX = (e.clientX / window.innerWidth)  * 100;
+        targetY = (e.clientY / window.innerHeight) * 100;
+      });
+      function tick() {
+        curX += (targetX - curX) * 0.07;
+        curY += (targetY - curY) * 0.07;
+        root.style.setProperty('--mx', curX.toFixed(2) + '%');
+        root.style.setProperty('--my', curY.toFixed(2) + '%');
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var chain = document.getElementById('lightsToggle');
+      var veil  = document.getElementById('veil');
+
+      function pull() {
+        chain.classList.add('pulling');
+        var isOn = veil.classList.toggle('active');
+        chain.classList.toggle('pulled', isOn);
+        chain.setAttribute('aria-pressed', isOn);
+        setTimeout(function () { chain.classList.remove('pulling'); }, 500);
+      }
+
+      chain.addEventListener('click', pull);
+      chain.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pull(); }
+      });
+    })();
+  </script>
 
   <script>
     (function () {
