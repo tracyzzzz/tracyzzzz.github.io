@@ -158,7 +158,13 @@
             </a>
           </div>
           <img src="../src/vote shifts.png" alt="CNN Magic Wall vote shifts visualization">
-          <img src="../src/datacast.png" alt="CNN Magic Wall datacast visualization">
+          <div class="video-scrub">
+            <video muted playsinline preload="auto">
+              <source src="../src/vids/clip1.mp4" type="video/mp4">
+            </video>
+            <div class="scrub-line"></div>
+          </div>
+          <div class="scrub-hint">drag to scrub</div>
         </div>
 
 
@@ -304,6 +310,24 @@
       btn.addEventListener('click', function () { panel.classList.contains('open') ? close() : open(); });
       overlay.addEventListener('click', close);
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      document.querySelectorAll('.video-scrub').forEach(function (container) {
+        var video = container.querySelector('video');
+        var line  = container.querySelector('.scrub-line');
+
+        container.addEventListener('mousemove', function (e) {
+          var rect = container.getBoundingClientRect();
+          var x = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+          line.style.left = (e.clientX - rect.left) + 'px';
+          if (video.duration) {
+            video.currentTime = x * video.duration;
+          }
+        });
+      });
     })();
   </script>
 

@@ -288,23 +288,63 @@
   stroke: #ffffff; 
 }
 
-  .project img{
+  .project img {
     max-width: 100%;
-    height: auto; 
+    height: auto;
     object-fit: cover;
-    margin-bottom: 0; 
+    margin-bottom: 0;
     display: block;
-    transition: transform 0.5s ease;
   }
 
-  .project img:hover {
-    transform: scale(1.02);
-  }
-
-  .project img:last-of-type {
+  .project img:last-child {
     margin-bottom: 2rem;
     display: block;
-}
+  }
+
+/* ── Video scrubber ─────────────────────────────── */
+  .video-scrub {
+    position: relative;
+    max-width: 100%;
+    display: block;
+    overflow: hidden;
+    cursor: crosshair;
+    margin-bottom: 0;
+  }
+
+  .video-scrub video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .scrub-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.5px;
+    height: 100%;
+    background: rgba(239, 236, 226, 0.75);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    box-shadow: 0 0 6px rgba(239, 236, 226, 0.4);
+  }
+
+  .video-scrub:hover .scrub-line {
+    opacity: 1;
+  }
+
+  .scrub-hint {
+    display: block;
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: rgba(100, 100, 100, 0.6);
+    margin-bottom: 2rem;
+    padding-top: 6px;
+  }
 
 /* ── Nav underline slide ─────────────────────────── */
 nav li a::after {
