@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/newsroom_tools.css" rel="stylesheet" type="text/css">
+    <link href="../css/mobile.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+    <title>Tracy Zhang | Newsroom Tools</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+
+
+  <body>
+    <nav>
+      <div class="title"><a href="../">tracy zihan zhang</a></div>
+
+      <ul>
+        <li><a class="selected" href="../newsroom-tools/">Newsroom Tools</a></li>
+        <li><a href="../video/">Videos</a></li>
+        <li><a href="../data/">Data Reporting</a></li>
+        <li><a href="../writing/">Writings & More</a></li>
+        <li><a href="../src/pdfs/Tracy_Zhang_Resume.pdf" target="_blank">Resume</a></li>
+        <li class="social-icons">
+          <a href="https://www.instagram.com/kacha_kachaaa/?__d=11" target="_blank">
+            <svg id="instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" aria-label="Instagram">
+                <rect class="stencil" x="75" y="75" width="270" height="270" rx="65.88" ry="65.88"/>
+                <circle class="stencil" cx="208.5" cy="211.5" r="60"/>
+                <circle class="dot" cx="291.5" cy="127.5" r="15"/>
+            </svg>
+          </a>
+        </li>
+
+        <li class="social-icons">
+          <a href="https://www.linkedin.com/in/tracyzzz/" target="_blank">
+              <svg id="linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" aria-label="LinkedIn">
+                <rect class="stencil" x="75" y="75" width="270" height="270" rx="50" ry="50"/>
+                <circle class="dot" cx="150" cy="150" r="20"/>
+                <rect class="dot" x="135" y="190" width="35" height="90"/>
+                <rect class="dot" x="190" y="190" width="35" height="90"/>
+                <rect class="dot" x="200" y="180" width="85" height="30"/>
+                <rect class="dot" x="250" y="190" width="35" height="90"/>
+            </svg>
+          </a>
+        </li>
+
+        <li class="social-icons">
+          <a href="https://github.com/tracyzzzz" target="_blank">
+              <svg id="github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" aria-label="GitHub">
+                <rect class="stencil" x="75" y="75" width="270" height="270" rx="65" ry="65"/>
+                <ellipse class="dot" cx="210" cy="200" rx="85" ry="65"/>
+                <polygon class="dot" points="150,162 160,120 200,140"/>
+                <polygon class="dot" points="215,140 255,120 265,162"/>
+                <polygon class="dot" points="170,350 200,160 220,160 250,350"/>
+            </svg>
+          </a>
+        </li>
+
+      </ul>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+    <div class="slide-panel" id="slidePanel">
+      <ul>
+        <li><a class="selected" href="../newsroom-tools/">Newsroom Tools</a></li>
+        <li><a href="../video/">Videos</a></li>
+        <li><a href="../data/">Data Reporting</a></li>
+        <li><a href="../writing/">Writings & More</a></li>
+        <li><a href="../src/pdfs/Tracy_Zhang_Resume.pdf" target="_blank">Resume</a></li>
+      </ul>
+    </div>
+
+    <section id="newsroom-page">
+
+      <header class="intro reveal">
+        <p class="eyebrow">Data &middot; Engineering &middot; Product Design</p>
+        <h1>Newsroom<br>Tools</h1>
+        <p class="lede">I work inside live newsroom systems &mdash; adding new data pipelines and
+          templates, prototyping better workflows, and shipping lightweight features on top of
+          existing tools &mdash; so journalists can turn data into stories under real broadcast pressure.</p>
+        <p class="lede-sub">I'm dropping into established codebases, finding what's slowing
+          people down, and building on top of it &mdash; new data, new features, better workflows.</p>
+        <p class="disclaimer">These are internal CNN production tools and are not shown publicly.
+          The diagrams below are simplified illustrations of the workflows &mdash; with the parts I
+          contribute to highlighted.</p>
+      </header>
+
+      <!-- ── 01 Element Builder ─────────────────────────── -->
+      <article class="case reveal">
+        <p class="case-eyebrow">01 &mdash; Data Pipelines &amp; Templates</p>
+        <h2>Element Builder</h2>
+        <p class="case-tagline">A producer-facing tool for turning live data into consistent on-air
+          graphics. I extend it with new data sources and templates.</p>
+
+        <div class="pipeline" data-flow>
+          <div class="node mine">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+            </div>
+            <span class="node-label">Data sources</span>
+          </div>
+          <div class="connector"><span class="flow"></span></div>
+          <div class="node mine">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <span class="node-label">Template selection</span>
+          </div>
+          <div class="connector"><span class="flow"></span></div>
+          <div class="node mine">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
+            </div>
+            <span class="node-label">Docs &amp; guides</span>
+          </div>
+          <div class="connector"><span class="flow"></span></div>
+          <div class="node">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </div>
+            <span class="node-label">Producer inputs</span>
+          </div>
+          <div class="connector"><span class="flow"></span></div>
+          <div class="node">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </div>
+            <span class="node-label">On-air graphic</span>
+          </div>
+        </div>
+        <p class="pipeline-note">Where I plug in: new <strong>data sources</strong> (built as Airflow DAG
+          pipelines), new <strong>interactive graphic templates</strong>, and how-to <strong>docs &amp; guides</strong>.</p>
+
+        <div class="case-detail">
+          <div class="detail-row">
+            <span class="detail-label">The problem</span>
+            <p class="detail-text">Live coverage constantly needs new datasets and new graphic formats.
+              The tool has to keep absorbing fresh data feeds and templates in a breaking news environment &mdash;
+              fast, and without breaking on air.</p>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">What I did</span>
+            <p class="detail-text">I bring new data sources and APIs into the tool as Airflow DAG pipelines,
+              and build new graphic templates and one-off special projects on top of the existing system &mdash;
+              so producers have the datapoints and formats they need for whatever story is breaking.</p>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">How I work</span>
+            <p class="detail-text">I pick up the existing codebase and pipeline setup quickly and build
+              within it &mdash; pairing with engineers to ship new data feeds and templates reliably, and
+              extending the tool as coverage needs evolve.</p>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Docs &amp; training</span>
+            <p class="detail-text">Wrote how-to guides and ran training sessions with teammates so
+              producers could confidently use the new templates and tools.</p>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Impact</span>
+            <p class="detail-text">Kept the tool current with the stories being told, giving producers a
+              faster, more consistent way to turn data into graphics on air.</p>
+          </div>
+        </div>
+
+        <div class="tech-tags">
+          <span class="tag">Svelte</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Airflow</span>
+          <span class="tag">Python</span>
+          <span class="tag">Git</span>
+        </div>
+      </article>
+
+      <!-- ── 02 Election CMS ─────────────────────────── -->
+      <article class="case reveal">
+        <p class="case-eyebrow">02 &mdash; Product Design &amp; Prototyping</p>
+        <h2>Producer Tools 2.0</h2>
+        <p class="case-tagline">A redesign of the content system producers use to manage CNN's Magic Wall Election App
+           &mdash; from clunky to intuitive.</p>
+
+        <div class="pipeline" data-flow>
+          <div class="node mine">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </div>
+            <span class="node-label">Editorial input</span>
+          </div>
+          <div class="connector"><span class="flow"></span></div>
+          <div class="node mine">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01"/><path d="M7 16.5h.01"/></svg>
+            </div>
+            <span class="node-label">CMS</span>
+          </div>
+          <div class="connector"><span class="flow"></span></div>
+          <div class="node">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 8h18"/><path d="M6.5 5.5h.01M9 5.5h.01"/></svg>
+            </div>
+            <span class="node-label">Election app</span>
+          </div>
+          <div class="connector"><span class="flow"></span></div>
+          <div class="node">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 4.9a10 10 0 0 0 0 14.2"/><path d="M19.1 4.9a10 10 0 0 1 0 14.2"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4"/><path d="M16.2 7.8a6 6 0 0 1 0 8.4"/><circle cx="12" cy="12" r="1.6"/></svg>
+            </div>
+            <span class="node-label">Broadcast</span>
+          </div>
+        </div>
+        <p class="pipeline-note">My focus: redesigning the <strong>CMS interface and workflow</strong> &mdash;
+          the editorial-input step where producers actually work.</p>
+
+        <div class="case-detail">
+          <div class="detail-row">
+            <span class="detail-label">The problem</span>
+            <p class="detail-text">Producer Tools 1.0 &mdash; the system editorial teams use to manage on-air
+              election graphics &mdash; wasn't intuitive and was hard to use under deadline, slowing people
+              down exactly when accuracy and speed matter most.</p>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">What I did</span>
+            <p class="detail-text">With the team, we reimagined it as Producer Tools 2.0 &mdash; prototyping
+              the redesign in Figma and rethinking both the look and the functionality so the workflow made
+              sense to the people using it live.</p>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">How I work</span>
+            <p class="detail-text">I focused on the experience &mdash; identifying the usability problems,
+              designing and prototyping the solution, then partnering with engineers through build and
+              rigorous QA to get it right.</p>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Documentation</span>
+            <p class="detail-text">Wrote how-to guides documenting the redesigned workflow and how it
+              works.</p>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Impact</span>
+            <p class="detail-text">A clearer, more intuitive content tool that made managing on-air election
+              graphics faster and less error-prone.</p>
+          </div>
+        </div>
+
+        <div class="tech-tags">
+          <span class="tag">Figma</span>
+          <span class="tag">Prototyping</span>
+          <span class="tag">UX Design</span>
+          <span class="tag">QA</span>
+          <span class="tag">Jira</span>
+          <span class="tag">Confluence</span>
+        </div>
+      </article>
+
+      <!-- ── 03 Magic Wall ─────────────────────────── -->
+      <article class="case reveal">
+        <p class="case-eyebrow">03 &mdash; Data, Features &amp; QA</p>
+        <h2>Magic Wall Election App</h2>
+        <p class="case-tagline">The flagship CNN Magic Wall Election App anchors use on election nights &mdash; I feed it data,
+          build lightweight features, and hammer on the QA.</p>
+
+        <div class="pipeline" data-flow>
+          <div class="node">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <span class="node-label">Anchor requests</span>
+          </div>
+          <div class="connector"><span class="flow"></span></div>
+          <div class="node mine">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <span class="node-label">Data &amp; analysis</span>
+          </div>
+          <div class="connector"><span class="flow"></span></div>
+          <div class="node mine">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 12l3 3 5-6"/></svg>
+            </div>
+            <span class="node-label">Rehearsals &amp; QA</span>
+          </div>
+          <div class="connector"><span class="flow"></span></div>
+          <div class="node mine">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 8h18"/><path d="M6.5 5.5h.01M9 5.5h.01"/></svg>
+            </div>
+            <span class="node-label">Live data &rarr; app</span>
+          </div>
+          <div class="connector"><span class="flow"></span></div>
+          <div class="node">
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a2 2 0 0 1 4 0v5"/><path d="M13 11V8a2 2 0 0 1 4 0v3"/><path d="M17 11a2 2 0 0 1 4 0v3a7 7 0 0 1-7 7h-2a7 7 0 0 1-6-4l-2-3.5a1.8 1.8 0 0 1 3-1.8L9 13"/></svg>
+            </div>
+            <span class="node-label">On-air interaction</span>
+          </div>
+        </div>
+        <p class="pipeline-note">Where I plug in: election <strong>data &amp; analysis</strong>,
+          <strong>rehearsals &amp; QA</strong>, and lightweight <strong>in-app features</strong>.</p>
+
+        <div class="case-detail">
+          <div class="detail-row">
+            <span class="detail-label">The problem</span>
+            <p class="detail-text">On election night, anchors need to explore results live &mdash; vote margins,
+              shifts, demographics &mdash; instantly and accurately, on air, in front of millions of live viewers with no room
+              for error.</p>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">What I did</span>
+            <p class="detail-text">I manage election and demographics data in the app &mdash; voting data,
+              win-margin analysis, and topical datasets spanning cost of living, health, and demographics &mdash;
+              run on-the-fly analysis during live coverage, and develop lightweight new features built around
+              that data.</p>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">How I work</span>
+            <p class="detail-text">I work on top of the existing app &mdash; learning the codebase and extending
+              it with data, analysis, and focused features, backed by rigorous QA before and during air.</p>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">Impact</span>
+            <p class="detail-text">Helped CNN viewers understand election results in real time through
+              accurate, clear, interactive graphics.</p>
+          </div>
+        </div>
+
+        <div class="tech-tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Data Analysis</span>
+          <span class="tag">QA</span>
+          <span class="tag">D3</span>
+          <span class="tag">Git</span>
+        </div>
+
+        <div class="buttons">
+          <a href="https://www.youtube.com/watch?v=5_DHl4Kp77A" target="_blank">
+            <button>
+              watch it on air
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </a>
+          <a href="https://www.youtube.com/watch?v=3PTnzXozmhc" target="_blank">
+            <button>
+              more election coverage
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </a>
+        </div>
+      </article>
+
+    </section>
+
+    <div class="mobile-social-bar">
+      <a href="https://www.instagram.com/kacha_kachaaa/?__d=11" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" aria-label="Instagram">
+          <rect class="stencil" x="75" y="75" width="270" height="270" rx="65.88" ry="65.88"/>
+          <circle class="stencil" cx="208.5" cy="211.5" r="60"/>
+          <circle class="dot" cx="291.5" cy="127.5" r="15"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/tracyzzz/" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" aria-label="LinkedIn">
+          <rect class="stencil" x="75" y="75" width="270" height="270" rx="50" ry="50"/>
+          <circle class="dot" cx="150" cy="150" r="20"/>
+          <rect class="dot" x="135" y="190" width="35" height="90"/>
+          <rect class="dot" x="190" y="190" width="35" height="90"/>
+          <rect class="dot" x="200" y="180" width="85" height="30"/>
+          <rect class="dot" x="250" y="190" width="35" height="90"/>
+        </svg>
+      </a>
+      <a href="https://github.com/tracyzzzz" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" aria-label="GitHub">
+          <rect class="stencil" x="75" y="75" width="270" height="270" rx="65" ry="65"/>
+          <ellipse class="dot" cx="210" cy="200" rx="85" ry="65"/>
+          <polygon class="dot" points="150,162 160,120 200,140"/>
+          <polygon class="dot" points="215,140 255,120 265,162"/>
+          <polygon class="dot" points="170,350 200,160 220,160 250,350"/>
+        </svg>
+      </a>
+    </div>
+  </body>
+  <footer>
+    <p>designed and built by tracy zhang with coffee. &copy; 2026 all rights reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var btn     = document.getElementById('hamburgerBtn');
+      var panel   = document.getElementById('slidePanel');
+      var overlay = document.getElementById('navOverlay');
+      function open()  { btn.classList.add('open'); panel.classList.add('open'); overlay.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      function close() { btn.classList.remove('open'); panel.classList.remove('open'); overlay.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+      btn.addEventListener('click', function () { panel.classList.contains('open') ? close() : open(); });
+      overlay.addEventListener('click', close);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var items = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              var pipe = entry.target.querySelector('[data-flow]');
+              if (pipe) pipe.classList.add('flowing');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        items.forEach(function (el) { observer.observe(el); });
+      } else {
+        items.forEach(function (el) {
+          el.classList.add('visible');
+          var pipe = el.querySelector('[data-flow]');
+          if (pipe) pipe.classList.add('flowing');
+        });
+      }
+    })();
+  </script>
+</html>

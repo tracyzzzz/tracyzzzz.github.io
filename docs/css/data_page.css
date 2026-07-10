@@ -56,7 +56,7 @@
       display:block;
       color: #424242;
       text-align: center;
-      padding: 33px 16px;
+      padding: 33px 13px;
       font-size: 14px;
       text-decoration: none;
       font-weight: 300;
@@ -100,7 +100,7 @@
   
   #data-page {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
     position:relative;    
     font-family: 'Avenir',sans-serif;
@@ -351,8 +351,8 @@ nav li a::after {
   content: '';
   position: absolute;
   bottom: 24px;
-  left: 16px;
-  right: 16px;
+  left: 13px;
+  right: 13px;
   height: 1px;
   background-color: #C6BB97;
   transform: scaleX(0);
@@ -369,10 +369,22 @@ nav .social-icons a::after {
   display: none;
 }
 
+/* ── Footer ──────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: #B0B0B0;
+}
+
 /* ── Mobile ──────────────────────────────────────── */
 @media (max-width: 767px) {
 
   body { min-width: 0; }
+
+  footer { margin-bottom: 56px; } /* clear fixed social bar */
 
   /* Collapse fixed two-column layout */
   #data-page {
