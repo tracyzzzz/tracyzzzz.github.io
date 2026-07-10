@@ -169,6 +169,35 @@
     margin: 0;
   }
 
+/* ── How I build ─────────────────────────────────── */
+  .how-i-build {
+    margin: 1.8rem 0;
+    padding: 1.6rem 1.8rem;
+    background: #FAF8F2;
+    border: 1px solid #EFEADD;
+    border-left: 3px solid #C6BB97;
+    border-radius: 3px;
+  }
+
+  .how-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C6BB97;
+    margin: 0 0 0.6rem;
+  }
+
+  .how-text {
+    font-family: 'Avenir Light', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    margin: 0;
+  }
+  .how-text strong { font-weight: 600; color: #424242; }
+
 /* ── Case study ──────────────────────────────────── */
   .case {
     padding-top: 4rem;
